@@ -1,0 +1,39 @@
+# PRJ-0005 — Qsoftware SaaS MVP
+## SupportDesk SaaS
+
+### 1. DOCUMENTAÇÃO
+- escopo.txt
+- requisitos.txt
+- entregas.txt
+- README.md
+
+### 2. DESENVOLVIMENTO
+- Aplicação Laravel.
+- Interface Vue.js.
+- Banco de dados MySQL.
+- Autenticação de usuários.
+- Arquitetura Multi-Tenant.
+- Gestão de empresas e usuários.
+- Gestão de chamados.
+- Dashboard administrativo.
+- Relatórios básicos.
+
+### 3. TESTES
+- Testes de autenticação.
+- Testes de permissões.
+- Testes de isolamento Multi-Tenant.
+- Testes de gerenciamento de chamados.
+- Testes de responsividade.
+- Validação das funcionalidades principais.
+
+### 4. PUBLICAÇÃO
+- Configuração do ambiente.
+- Configuração Docker.
+- Deploy da aplicação.
+- Verificação do funcionamento.
+
+### 5. PORTFÓLIO
+- Repositório GitHub.
+- README em inglês.
+- Screenshots da aplicação.
+- Demonstração funcional para Upwork.

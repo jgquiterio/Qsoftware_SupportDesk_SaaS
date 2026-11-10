@@ -1,0 +1,90 @@
+# PRJ-0005 — Qsoftware SaaS MVP
+## SupportDesk SaaS
+
+### 1. REQUISITOS FUNCIONAIS
+
+RF01 — O sistema deve permitir o cadastro de empresas.
+
+RF02 — O sistema deve permitir login e logout de usuários.
+
+RF03 — O sistema deve permitir que cada empresa gerencie seus usuários.
+
+RF04 — O sistema deve permitir cadastrar, editar, consultar e desativar usuários.
+
+RF05 — O sistema deve permitir criar chamados de atendimento.
+
+RF06 — O sistema deve permitir atribuir chamados aos atendentes.
+
+RF07 — O sistema deve permitir definir prioridades dos chamados.
+
+RF08 — O sistema deve permitir alterar o status dos chamados.
+
+RF09 — O sistema deve armazenar o histórico de atendimento.
+
+RF10 — O sistema deve apresentar um dashboard com indicadores.
+
+RF11 — O sistema deve permitir consultar relatórios básicos.
+
+### 2. REQUISITOS NÃO FUNCIONAIS
+
+RNF01 — A aplicação deve ser responsiva.
+
+RNF02 — A aplicação deve utilizar Laravel no backend.
+
+RNF03 — A aplicação deve utilizar Vue.js no frontend.
+
+RNF04 — O banco de dados deve utilizar MySQL.
+
+RNF05 — O sistema deve implementar autenticação segura.
+
+RNF06 — O sistema deve garantir isolamento de dados entre empresas (Multi-Tenant).
+
+RNF07 — O sistema deve validar os dados recebidos.
+
+RNF08 — O código deve seguir boas práticas de organização e manutenção.
+
+### 3. REGRAS DE NEGÓCIO
+
+RN01 — Cada empresa deve possuir seus próprios usuários e chamados.
+
+RN02 — Um usuário somente poderá acessar dados pertencentes à sua empresa.
+
+RN03 — Cada chamado deve pertencer obrigatoriamente a uma empresa.
+
+RN04 — Cada chamado deve possuir um título, descrição, prioridade e status.
+
+RN05 — Os status disponíveis serão: Open, In Progress, Pending e Closed.
+
+RN06 — As prioridades disponíveis serão: Low, Medium, High e Urgent.
+
+RN07 — Somente usuários autorizados poderão gerenciar usuários e permissões.
+
+RN08 — Toda alteração de status deverá ser registrada no histórico do chamado.
+
+RN09 — Um usuário não poderá visualizar ou modificar chamados de outra empresa.
+
+### 4. CRITERIO DE ACEITE
+
+CA01 — Deve ser possível cadastrar e autenticar usuários.
+
+CA02 — Deve ser possível cadastrar e gerenciar empresas.
+
+CA03 — Deve ser possível gerenciar usuários de uma empresa.
+
+CA04 — Deve ser possível criar e consultar chamados.
+
+CA05 — Deve ser possível atribuir chamados aos atendentes.
+
+CA06 — Deve ser possível alterar status e prioridades.
+
+CA07 — O histórico deve registrar as alterações dos chamados.
+
+CA08 — O dashboard deve apresentar indicadores dos chamados.
+
+CA09 — Os relatórios básicos devem apresentar dados corretos.
+
+CA10 — O isolamento multi-tenant deve impedir acesso cruzado entre empresas.
+
+CA11 — A aplicação deve funcionar em dispositivos desktop e mobile.
+
+CA12 — Os principais fluxos devem passar pelos testes funcionais.

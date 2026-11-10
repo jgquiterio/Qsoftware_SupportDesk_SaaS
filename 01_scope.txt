@@ -1,0 +1,31 @@
+# PRJ-0005 — Qsoftware SaaS MVP
+## SupportDesk SaaS
+
+### 1. OBJETIVO
+Desenvolver uma plataforma SaaS de atendimento ao cliente, permitindo que empresas gerenciem usuários, equipes e chamados em um ambiente multi-tenant.
+
+### 2. PÚBLICO-ALVO
+Pequenas e médias empresas que precisam organizar seu atendimento ao cliente.
+
+### 3. ESCOPO FUNCIONAL
+- Autenticação de usuários.
+- Cadastro e gerenciamento de empresas.
+- Gerenciamento de usuários e permissões.
+- Cadastro e gerenciamento de chamados.
+- Controle de status e prioridades.
+- Histórico de atendimento.
+- Dashboard administrativo.
+- Relatórios básicos.
+
+### 4. TECNOLOGIAS
+- Backend: Laravel
+- Frontend: Vue.js
+- Banco de dados: MySQL
+- Interface: Bootstrap / AdminLTE
+- Ambiente: Docker
+
+### 5. RESULTADO ESPERADO
+Uma aplicação SaaS funcional, responsiva e com isolamento de dados entre empresas, pronta para demonstração no portfólio da Qsoftware e no Upwork.
+
+### 6. LIMITAÇÕES DO MVP
+Não incluir inicialmente pagamentos online, inteligência artificial, chat em tempo real ou integrações externas.
