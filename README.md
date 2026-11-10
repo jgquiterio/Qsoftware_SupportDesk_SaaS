@@ -23,9 +23,8 @@ SupportDesk SaaS is a customer support management platform designed to help busi
 |---|---|
 | Laravel | Backend |
 | Vue.js | Frontend |
-| MySQL | Database |
+| SQLite | Database |
 | Bootstrap / AdminLTE | User Interface |
-| Docker | Development Environment |
 
 ## Multi-Tenant Architecture
 

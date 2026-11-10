@@ -20,7 +20,7 @@ Pequenas e médias empresas que precisam organizar seu atendimento ao cliente.
 ### 4. TECNOLOGIAS
 - Backend: Laravel
 - Frontend: Vue.js
-- Banco de dados: MySQL
+- Banco de dados: SQLite
 - Interface: Bootstrap / AdminLTE
 - Ambiente: Docker
 

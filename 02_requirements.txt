@@ -33,7 +33,7 @@ RNF02 — A aplicação deve utilizar Laravel no backend.
 
 RNF03 — A aplicação deve utilizar Vue.js no frontend.
 
-RNF04 — O banco de dados deve utilizar MySQL.
+RNF04 — O banco de dados deve utilizar SQLite.
 
 RNF05 — O sistema deve implementar autenticação segura.
 

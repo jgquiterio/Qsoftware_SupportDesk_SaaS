@@ -10,7 +10,7 @@
 ### 2. DESENVOLVIMENTO
 - Aplicação Laravel.
 - Interface Vue.js.
-- Banco de dados MySQL.
+- Banco de dados SQLite.
 - Autenticação de usuários.
 - Arquitetura Multi-Tenant.
 - Gestão de empresas e usuários.
@@ -28,7 +28,6 @@
 
 ### 4. PUBLICAÇÃO
 - Configuração do ambiente.
-- Configuração Docker.
 - Deploy da aplicação.
 - Verificação do funcionamento.
 
