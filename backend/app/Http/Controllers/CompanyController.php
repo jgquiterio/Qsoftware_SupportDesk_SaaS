@@ -27,6 +27,8 @@ class CompanyController extends Controller
 
 	$user = $request->user();
 	$user->company_id = $company->id;
+	$user->role = 'admin';
+	$user->is_active = true;
 	$user->save();
 
         return response()->json([
