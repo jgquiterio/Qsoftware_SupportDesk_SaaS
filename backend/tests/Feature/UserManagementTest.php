@@ -156,6 +156,111 @@ class UserManagementTest extends TestCase
     {
         $response = $this->getJson('/api/users');
 
-        $response->assertUnauthorized();
+        $response->assertUnauthorized();	
     }
+
+    public function test_admin_cannot_update_user_from_another_company(): void
+    {
+        $this->createAdmin();
+
+        $otherCompany = Company::create([
+            'name' => 'Other Company',
+        ]);
+
+        $otherUser = User::factory()->create([
+            'company_id' => $otherCompany->id,
+            'name' => 'Original Name',
+        ]);
+
+        $response = $this->putJson("/api/users/{$otherUser->id}", [
+            'name' => 'Hacked Name',
+        ]);
+
+        $response->assertNotFound();
+
+        $this->assertDatabaseHas('users', [
+            'id' => $otherUser->id,
+            'name' => 'Original Name',
+        ]);
+    }
+
+    public function test_admin_cannot_toggle_status_of_user_from_another_company(): void
+    {
+        $this->createAdmin();
+
+        $otherCompany = Company::create([
+            'name' => 'Other Company',
+        ]);
+
+        $otherUser = User::factory()->create([
+            'company_id' => $otherCompany->id,
+            'is_active' => true,
+        ]);
+
+        $response = $this->patchJson("/api/users/{$otherUser->id}/status");
+
+        $response->assertNotFound();
+
+        $this->assertDatabaseHas('users', [
+            'id' => $otherUser->id,
+            'is_active' => true,
+        ]);
+    }
+
+    public function test_admin_can_only_list_users_from_own_company(): void
+    {
+        [$company] = $this->createAdmin();
+
+        User::factory()->create([
+            'company_id' => $company->id,
+        ]);
+
+        $otherCompany = Company::create([
+            'name' => 'Other Company',
+        ]);
+
+        User::factory()->create([
+            'company_id' => $otherCompany->id,
+        ]);
+
+        $response = $this->getJson('/api/users');
+
+        $response->assertOk()
+            ->assertJsonCount(2, 'users');
+    }
+
+    public function test_inactive_admin_cannot_manage_company_users(): void
+    {
+        $company = Company::create([
+            'name' => 'Qsoftware',
+        ]);
+
+        $admin = User::factory()->create([
+            'company_id' => $company->id,
+            'role' => 'admin',
+            'is_active' => false,
+        ]);
+
+        Sanctum::actingAs($admin);
+
+        $response = $this->getJson('/api/users');
+
+        $response->assertForbidden();
+    }
+
+    public function test_user_without_company_cannot_access_company_resources(): void
+    {
+        $user = User::factory()->create([
+            'company_id' => null,
+            'role' => 'admin',
+            'is_active' => true,
+        ]);
+
+        Sanctum::actingAs($user);
+
+        $response = $this->getJson('/api/user');
+
+        $response->assertForbidden();
+    }
+
 }

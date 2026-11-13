@@ -10,6 +10,12 @@ class CompanyController extends Controller
 {
     public function store(Request $request)
     {
+	if ($request->user()->company_id) {
+	    return response()->json([
+	        'message' => 'You already belong to a company.'
+	    ], 409);
+	}
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
         ]);

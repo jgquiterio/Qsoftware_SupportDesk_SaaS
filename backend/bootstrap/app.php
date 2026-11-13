@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
 	    'company.admin' => \App\Http\Middleware\EnsureCompanyAdmin::class,
+	    'company.active' => \App\Http\Middleware\EnsureActiveCompanyUser::class,
 	]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

@@ -67,4 +67,25 @@ class UserAuthenticationTest extends TestCase
             'tokenable_id' => $user->id,
         ]);
     }
+
+    public function test_inactive_user_cannot_login(): void
+    {
+        User::create([
+            'name' => 'Inactive User',
+            'email' => 'inactive@example.com',
+            'password' => Hash::make('password123'),
+            'is_active' => false,
+        ]);
+
+        $response = $this->postJson('/api/login', [
+            'email' => 'inactive@example.com',
+            'password' => 'password123',
+        ]);
+
+        $response->assertForbidden()
+            ->assertJson([
+                'message' => 'Your account is inactive.',
+            ]);
+    }
+
 }
